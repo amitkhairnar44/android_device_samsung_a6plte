@@ -1,0 +1,31 @@
+#
+# Copyright (C) 2018 The TwrpBuilder Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+/boot 			emmc 	/dev/block/bootdevice/by-name/boot		flags=backup=1;display="Boot"
+/data 			ext4 	/dev/block/bootdevice/by-name/userdata		flags=backup=1;canbewiped;wipeingui;wipeduringfactoryreset
+/system 		ext4 	/dev/block/bootdevice/by-name/system		flags=backup=1;canbewiped;wipeingui;display="System"
+/cache 			ext4 	/dev/block/bootdevice/by-name/cache		flags=backup=1;canbewiped;wipeingui;wipeduringfactoryreset;display="Cache"
+/misc 			emmc 	/dev/block/bootdevice/by-name/misc		flags=backup=0;display="Misc"
+/recovery 		emmc 	/dev/block/bootdevice/by-name/recovery		flags=backup=1;display="Recovery"
+/preload        	ext4 	/dev/block/bootdevice/by-name/hidden		flags=backup=1;display="Preload"
+/efs            	ext4 	/dev/block/bootdevice/by-name/efs		flags=backup=1;display="EFS"
+/vendor         	ext4 	/dev/block/bootdevice/by-name/vendor
+/odm            	ext4 	/dev/block/bootdevice/by-name/odm		flags=backup=1;display="Carrier Configs";flashimg
+/modem          	emmc 	/dev/block/bootdevice/by-name/apnhlos		flags=backup=1;display="Firmware"
+/mdm            	emmc 	/dev/block/bootdevice/by-name/modem		flags=backup=1;display="Modem"
+/dsp            	emmc 	/dev/block/bootdevice/by-name/dsp
+/external_sd 		vfat 	/dev/block/mmcblk1p1 /dev/block/mmcblk1		flags=display="Micro SDcard";storage;wipeingui;removable
+/usb_otg                vfat    /dev/block/sda1      /dev/block/sda		flags=display="USB-OTG";storage;wipeingui;removable
